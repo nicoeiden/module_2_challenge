@@ -28,3 +28,9 @@ def load_csv(csvpath):
         for row in csvreader:
             data.append(row)
     return data
+
+def save_csv(csvpath, qualifying_loans):
+
+    with open(csvpath,'w', newline= '') as csvfile:
+        csvwriter = csv.writer(csvfile, delimiter= ',')
+        csvwriter.writerows(qualifying_loans)
